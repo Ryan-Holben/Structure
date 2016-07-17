@@ -1,8 +1,11 @@
 # Structure
 
-An experiment in graphing the control flow of a Python program.  Currently does not support multithreaded applications.
+An experiment in graphing the control flow of a Python program.  Currently does not support multithreaded applications.  Graphing done with [Graph-Tool](https://graph-tool.skewed.de).
 
 ### Usage
+
+[<img src="example.png" style="float:right; width: 45%; height: 45%">](example.png)
+
 
 First, include the following at the start of your code that you would like to profile.
 
