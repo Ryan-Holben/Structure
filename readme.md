@@ -4,31 +4,41 @@ An experiment in graphing the control flow of a Python program.  Currently does 
 
 ### Usage
 
+First, include the following at the start of your code that you would like to profile.
+
+
     import structure
+
     s = structure.Structure()
-    s.setDepth(depth = 3)
-    s.setLocal(True)
-    s.setSaveFile("output.dat")
+    s.setMaxDepth(depth = 3)       # Option: Don't log call stack depth > n
+    s.setLocal(True)               # Option: Only log files in your script's directory
+    s.setLogFile("test.log")       # Set the location of the log file
     s.beginTrace()
 
-### Parameters
-* int Depth
-        Specify how deep into the stack we will record.  By limiting this quantity, we can avoid a lot of "noise."
-* bool Local
-        If set to True, we will not follow the stack into source files outside of the project directory.
+Run your code.  The log file "test.log" will be produced.  When your code terminates, we're ready to graph the data.
 
-# Storing the results
+    import stackgraph
+
+    G = stackgraph.StackGraph()
+    G.load("test.log")              # All the heavy lifting happens here
+    G.display()
+
+# Graph structure
 
 Results will be stored in a directed graph, where each node represents a function, and an arrow on an edge shows the direction of function calls.
 
-An edge may contain:
+An edge will contain a list of length-2 lists, each of which representing one function call that occurred.  To each of these we record:
 * Timestamp of each call
-* Number of calls
+* Depth of each call
 
-A node may contain:
-* Total number of calls
+A node will correspond to a function.  It contains:
+* Filename where the function is defined
+* Name of the containing class if it is a class method
+* The function name
+
+In the future, it may contain:
 * Elapsed runtime
-        * A breakdown including time spent waiting for child functions to return
+* A breakdown including time spent waiting for child functions to return
 
 ### Advanced features
 
