@@ -2,9 +2,6 @@
 
 An experiment in graphing the control flow of a Python program.  Currently does not support multithreaded applications.
 
-### Challenges
-* Identifying class methods' class names
-
 ### Usage
 
     import structure
