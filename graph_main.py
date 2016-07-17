@@ -5,3 +5,4 @@ import stackgraph
 
 G = stackgraph.StackGraph()
 G.load("test.log")
+G.display()

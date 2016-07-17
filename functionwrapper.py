@@ -17,11 +17,8 @@ class FunctionWrapper(object):
             return False
 
     def __ne__(self, rhs):
-        try:
-            return self.filename != rhs.filename or self.classname != rhs.classname or self.funcname != rhs.funcname
-        except:
-            return True
-            
+        return not (self == rhs)
+
     def fromstring(self, string):
         """String format [a,b,c]"""
         words = string[1:-1].split(",")
@@ -29,3 +26,6 @@ class FunctionWrapper(object):
         self.filename = words[0]
         self.classname = None if words[1] == "None" else words[1]
         self.funcname = words[2]
+
+    def graphDisplayString(self):
+        return ("" if self.classname == None else self.classname + ".") + self.funcname + "( )"

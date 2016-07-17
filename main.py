@@ -11,13 +11,23 @@ def fib(n):
     if n == 0 or n == 1:
         return 1
     else:
+        if n%2 == 0:
+            even()
+        else:
+            odd()
         return fib(n-1) + fib(n-2)
+
+def even():
+    return
+
+def odd():
+    return even()
 
 class test():
     def __init__(self):
         pass
-    def class_func(self, arg):
-        return arg
+    def class_func(self, n):
+        return fib(n)
 
 
 def main():
