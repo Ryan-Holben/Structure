@@ -4,6 +4,17 @@ from time import clock
 # See https://pymotw.com/2/sys/tracing.html for info on setting this stuff up!
 
 from pprint import pprint
+
+class FunctionWrapper(object):
+    def __init__(self, filename, classname, funcname):
+        self.filename, self.classname, self.funcname = filename, classname, funcname
+
+    def __str__(self):
+        string = "|" + self.filename + "|"
+        if self.classname != None:
+            string += self.classname + "."
+        return string + self.funcname + "()"
+
 class Structure(object):
     def __init__(self, logfilename = None):
         self.ignore_functions = set(["write", "print", "_remove", "__exitHook", "_run_exitfuncs", "_exitfunc"])
@@ -17,17 +28,15 @@ class Structure(object):
         self.logfilename = logfilename
 
     def __stackString(self, stack):
-        return "->".join([x[0] + "." + x[1] + "()" if x[0] != None else x[1] + "()" for x in stack][::-1])
+        return "->".join([str(x) for x in stack][::-1])
         # return "->".join([function + "()" for function in stack][::-1])
 
     def __buildStack(self, frame):
         f = frame
         stack = []
         while f != None:
-            if "self" in f.f_locals:
-                stack.append([f.f_locals["self"].__class__.__name__, f.f_code.co_name])
-            else:
-                stack.append([None, f.f_code.co_name])
+            classname = f.f_locals["self"].__class__.__name__ if "self" in f.f_locals else None
+            stack.append(FunctionWrapper(f.f_code.co_filename, classname, f.f_code.co_name))
             f = f.f_back
         return stack
 
@@ -44,7 +53,7 @@ class Structure(object):
             if self.max_depth and depth > self.max_depth:
                 return
             # Skip any forbidden functions show up in the call stack
-            if not self.ignore_functions.isdisjoint([x[1] for x in stack]):
+            if not self.ignore_functions.isdisjoint([x.funcname for x in stack]):
                 return
             # Display it
             self.log.info("t:" + str(clock()) + "\td:" + str(depth) + "\t" + self.__stackString(stack))

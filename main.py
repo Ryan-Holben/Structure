@@ -26,7 +26,7 @@ def main():
     s.setLogFile("test.log")
     s.beginTrace()
 
-    print fib(10)
+    print fib(5)
 
     testclass_instance = test()
     testclass_instance.class_func(4)
