@@ -1,19 +1,11 @@
 import sys, atexit, logging
 from time import clock
+from functionwrapper import FunctionWrapper
 
 # See https://pymotw.com/2/sys/tracing.html for info on setting this stuff up!
 
 from pprint import pprint
 
-class FunctionWrapper(object):
-    def __init__(self, filename, classname, funcname):
-        self.filename, self.classname, self.funcname = filename, classname, funcname
-
-    def __str__(self):
-        string = "|" + self.filename + "|"
-        if self.classname != None:
-            string += self.classname + "."
-        return string + self.funcname + "()"
 
 class Structure(object):
     def __init__(self, logfilename = None):

@@ -1,18 +1,18 @@
-t:0.044116	***************Starting Call Stack Logging***************
-t:0.044318	d:3	|main.py|<module>()->|main.py|main()->|main.py|fib()
-t:0.044425	d:4	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()
-t:0.044527	d:5	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.044623	d:6	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.044721	d:7	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.044824	d:7	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.04492	d:6	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.045011	d:5	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.045101	d:6	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.045195	d:6	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.045283	d:4	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()
-t:0.045369	d:5	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.04546	d:6	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.045551	d:6	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.04564	d:5	|main.py|<module>()->|main.py|main()->|main.py|fib()->|main.py|fib()->|main.py|fib()
-t:0.045756	d:3	|main.py|<module>()->|main.py|main()->|main.py|test.__init__()
-t:0.04586	d:3	|main.py|<module>()->|main.py|main()->|main.py|test.class_func()
+t:0.043668	***************Starting Call Stack Logging***************
+t:0.043847	d:3	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]
+t:0.043948	d:4	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044038	d:5	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044128	d:6	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044219	d:7	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044323	d:7	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044404	d:6	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044481	d:5	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044571	d:6	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044658	d:6	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044731	d:4	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044801	d:5	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044876	d:6	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.044951	d:6	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.045024	d:5	[main.py,None,<module>]->[main.py,None,main]->[main.py,None,fib]->[main.py,None,fib]->[main.py,None,fib]
+t:0.04514	d:3	[main.py,None,<module>]->[main.py,None,main]->[main.py,test,__init__]
+t:0.045218	d:3	[main.py,None,<module>]->[main.py,None,main]->[main.py,test,class_func]
