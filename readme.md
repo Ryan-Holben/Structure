@@ -2,10 +2,9 @@
 
 An experiment in graphing the control flow of a Python program.  Currently does not support multithreaded applications.  Graphing done with [Graph-Tool](https://graph-tool.skewed.de).
 
-### Usage
+## Usage
 
-<img src="example.png" style="float:right; width: 45%; height: 45%">
-
+<img src="example.png" align=right>
 
 First, include the following at the start of your code that you would like to profile.
 
@@ -26,7 +25,7 @@ Run your code.  The log file "test.log" will be produced.  When your code termin
     G.load("test.log")              # All the heavy lifting happens here
     G.display()
 
-# Graph structure
+## Graph structure
 
 Results will be stored in a directed graph, where each node represents a function, and an arrow on an edge shows the direction of function calls.
 
@@ -43,7 +42,7 @@ In the future, it may contain:
 * Elapsed runtime
 * A breakdown including time spent waiting for child functions to return
 
-### Advanced features
+## Goal features
 
 * An interactive web-based graph explorer
 * On the fly changing of depth that we display
