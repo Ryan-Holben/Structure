@@ -1,4 +1,5 @@
 import structure
+from time import clock
 
 def b():
     print 'in b()'
@@ -8,6 +9,7 @@ def a():
     b()
 
 def fib(n):
+    math.ceil(2.5)
     if n == 0 or n == 1:
         return 1
     else:
@@ -36,10 +38,12 @@ def main():
     s.setLogFile("test.log")
     s.beginTrace()
 
-    print fib(3)
+    # print fib(4)
+    even()
+    clock()
 
     testclass_instance = test()
-    testclass_instance.class_func(4)
+    # testclass_instance.class_func(4)
 
 if __name__ == "__main__":
     main()

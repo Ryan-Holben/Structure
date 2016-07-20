@@ -42,11 +42,11 @@ class Structure(object):
             stack = self.__buildStack(frame)
             depth = len(stack)
             # Skip if we are too deep into the call stack
-            if self.max_depth and depth > self.max_depth:
-                return
+            # if self.max_depth and depth > self.max_depth:
+            #     return
             # Skip any forbidden functions show up in the call stack
-            if not self.ignore_functions.isdisjoint([x.funcname for x in stack]):
-                return
+            # if not self.ignore_functions.isdisjoint([x.funcname for x in stack]):
+            #     return
             # Display it
             self.log.info("t:" + str(clock()) + "\td:" + str(depth) + "\t" + self.__stackString(stack))
 
@@ -54,9 +54,11 @@ class Structure(object):
         except Exception as e:
             # Probably should put some actual error handling here...
             print "TRACEHOOK EXCEPTION:", e
+            self.log.warn("*** TRACEHOOK EXCEPTION:" + str(e))
 
     def __exitHook(self):
         sys.settrace(None)
+        self.log.info("t:" + str(clock()) + "\t" + "*"*15 + "Safely Concluded Logging" + "*"*15)
 
     def beginTrace(self):
         # Register the exit hook function
